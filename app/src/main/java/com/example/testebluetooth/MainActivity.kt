@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     var connections : Boolean = false
     val sendData : ConnectionBlueTooth = ConnectionBlueTooth()
     var handler : Handler = Handler()
+    val macDevice : String = "00:11:22:33:44:55"
 
      val MESSAGE_READ: Int = 0
      val MESSAGE_WRITE: Int = 1
@@ -74,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.conectionButton.setOnClickListener {
-            meuDevice = bluetoothAdapter.getRemoteDevice(devices[0].address)
+            meuDevice = bluetoothAdapter.getRemoteDevice(macDevice)
             openConection(meuDevice)
 
         }
